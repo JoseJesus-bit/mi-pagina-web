@@ -12,5 +12,5 @@ Este sitio es un "Hola Mundo" básico para probar el despliegue en la nube.
 
 ## 🔗 Ver en vivo
 Si ya activaste GitHub Pages, puedes ver el resultado aquí:
-[https://josejesus-bit.github.io/mi-primer-pagina/](https://josejesus-bit.github.io/mi-primer-pagina/)
+https://josejesus-bit.github.io/mi-pagina-web/
 
