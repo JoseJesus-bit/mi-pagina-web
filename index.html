@@ -1,15 +1,283 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Hola Mundo Web</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birriería - Ciudad Guzmán</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
-        body { font-family: sans-serif; text-align: center; margin-top: 50px; background-color: #f0f0f0; }
-        h1 { color: #2c3e50; }
+        :root {
+            --rojo-birria: #b22222;
+            --blanco: #ffffff;
+            --oscuro: #2d2d2d;
+            --gris-claro: #f4f4f4;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--gris-claro);
+            color: var(--oscuro);
+            overflow-x: hidden;
+        }
+
+        /* --- 1. ENCABEZADO (LOGO) --- */
+        header {
+            background-color: var(--rojo-birria);
+            padding: 1.5rem;
+            text-align: center;
+        }
+        .logo-container img { max-width: 180px; height: auto; }
+
+        /* --- 2. GALERÍA CON JAVASCRIPT --- */
+        .slider-container {
+            position: relative;
+            width: 100%;
+            height: 450px;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .slider {
+            display: flex;
+            width: 300%; /* 100% por cada imagen (3 imágenes = 300%) */
+            height: 100%;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .slide {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Botones de navegación */
+        .nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(8px);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            z-index: 10;
+            transition: 0.3s;
+        }
+        .nav-btn:hover { background-color: var(--rojo-birria); }
+        .prev-btn { left: 20px; }
+        .next-btn { right: 20px; }
+
+        /* --- 3. MENÚ DE PRODUCTOS (8 PRODUCTOS) --- */
+        .section {
+            padding: 3rem 1.5rem;
+            max-width: 1100px;
+            margin: auto;
+            text-align: center;
+        }
+        
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+            margin-top: 2rem;
+        }
+
+        .menu-item {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+        .menu-item:hover { transform: translateY(-8px); }
+
+        .prod-img {
+            width: 100%;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .prod-info { padding: 1.5rem; }
+        .prod-info h3 { margin: 0 0 8px; color: var(--rojo-birria); font-size: 1.2rem; }
+        .prod-info p { font-size: 0.9rem; color: #666; line-height: 1.4; }
+
+        /* --- 4. TABLA DE EVENTOS --- */
+        .eventos-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            overflow-x: auto;
+        }
+        .tabla-eventos {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 500px;
+        }
+        .tabla-eventos th { background: var(--rojo-birria); color: white; padding: 15px; text-align: center; }
+        .tabla-eventos td { padding: 15px; border-bottom: 1px solid #eee; text-align: center; }
+
+        /* --- 5. UBICACIÓN --- */
+        .map-wrapper { position: relative; border-radius: 25px; overflow: hidden; height: 400px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .btn-encuentranos {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--rojo-birria);
+            color: white;
+            padding: 14px 28px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            z-index: 5;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        /* --- 6. WHATSAPP FLOTANTE --- */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #25d366;
+            color: white;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 35px;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            text-decoration: none;
+        }
+
+        footer { background: var(--oscuro); color: white; padding: 2rem; text-align: center; margin-top: 2rem; }
     </style>
 </head>
 <body>
-    <h1>¡Hola Mundo desde mi propio Repo!</h1>
-    <p>Proyecto creado para aprender Git y GitHub.</p>
-    <p>Y recordar sobre html.</p>
+
+    <header>
+        <div class="logo-container">
+            <img src="C:\Users\dokie\OneDrive\Desktop\logo.png" alt="Birriería Logo">
+        </div>
+    </header>
+
+    <div class="slider-container">
+        <button class="nav-btn prev-btn" onclick="changeSlide(-1)">❮</button>
+        <button class="nav-btn next-btn" onclick="changeSlide(1)">❯</button>
+        
+        <div class="slider" id="mainSlider">
+            <div class="slide" style="background-image: url('file:///C:/Users/dokie/OneDrive/Desktop/Comida-A.jpg');"></div>
+            <div class="slide" style="background-image: url('file:///C:/Users/dokie/OneDrive/Desktop/Comida-B.jpg');"></div>
+            <div class="slide" style="background-image: url('file:///C:/Users/dokie/OneDrive/Desktop/Comida-C.jpg');"></div>
+        </div>
+    </div>
+
+    <section class="section">
+        <h2>Lo que se ofrece</h2>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <div class="prod-img" style="background-image: url('file:///C:/Users/dokie/OneDrive/Desktop/Comida-A.jpg');"></div>
+                <div class="prod-info"><h3>Comida A</h3><p>A A A A</p></div>
+            </div>
+            <div class="menu-item">
+                <div class="prod-img" style="background-image: url('file:///C:/Users/dokie/OneDrive/Desktop/Comida-B.jpg');"></div>
+                <div class="prod-info"><h3>Comida B</h3><p>B B B B</p></div>
+            </div>
+            <div class="menu-item">
+                <div class="prod-img" style="background-image: url('file:///C:/Users/dokie/OneDrive/Desktop/Comida-C.jpg');"></div>
+                <div class="prod-info"><h3>Comida C</h3><p>C C C C</p></div>
+            </div>
+            <div class="menu-item">
+                <div class="prod-img" style="background-image: url('file:///C:/Users/dokie/OneDrive/Desktop/Comida-D.jpg');"></div>
+                <div class="prod-info"><h3>Comida D</h3><p>D D D D</p></div>
+            </div>
+            <div class="menu-item">
+                <div class="prod-img" style="background-image: url('file:///C:/Users/dokie/OneDrive/Desktop/Comida-E.jpg');"></div>
+                <div class="prod-info"><h3>Comida E</h3><p>E E E E</p></div>
+            </div>
+            <div class="menu-item">
+                <div class="prod-img" style="background-image: url('file:///C:/Users/dokie/OneDrive/Desktop/Comida-F.jpg');"></div>
+                <div class="prod-info"><h3>Comida F</h3><p>F F F F</p></div>
+            </div>
+            <div class="menu-item">
+                <div class="prod-img" style="background-image: url('file:///C:/Users/dokie/OneDrive/Desktop/Comida-G.jpg');"></div>
+                <div class="prod-info"><h3>Comida G</h3><p>G G G G</p></div>
+            </div>
+            <div class="menu-item">
+                <div class="prod-img" style="background-image: url('file:///C:/Users/dokie/OneDrive/Desktop/Comida-H.jpg');"></div>
+                <div class="prod-info"><h3>Comida H</h3><p>H H H H</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Paquetes para Eventos</h2>
+        <div class="eventos-card">
+            <table class="tabla-eventos">
+                <thead>
+                    <tr><th>Paquete</th><th>N° Personas</th><th>Precio Estimado</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Básico</td><td>30 personas</td><td>$123 MXN</td></tr>
+                    <tr><td>Familiar</td><td>50 personas</td><td>$123 MXN</td></tr>
+                    <tr><td>Evento Grande</td><td>100 personas</td><td>$123 MXN</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="map-wrapper">
+            <a href="https://maps.app.goo.gl/6vNiheoybW7DPbBs5" target="_blank" class="btn-encuentranos">
+                <i class="fas fa-map-marker-alt"></i> Encuéntranos en Maps
+            </a>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d332.02223083851334!2d-103.45638474739651!3d19.695470740255168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842f875565200db5%3A0xc00d30da115053f1!2sEL%20Calladito%20Jr.!5e0!3m2!1ses-419!2smx!4v1777319663151!5m2!1ses-419!2smx" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Birriería - Ciudad Guzmán, Jalisco</p>
+    </header>
+
+    <a href="https://wa.me/523411754639" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        let index = 0;
+        const slider = document.getElementById('mainSlider');
+        const totalSlides = 3; // Cambia este número si agregas más fotos a la galería
+
+        function updateSlider() {
+            slider.style.transform = `translateX(-${(index * 100) / totalSlides}%)`;
+        }
+
+        function changeSlide(direction) {
+            index += direction;
+            if (index < 0) index = totalSlides - 1;
+            if (index >= totalSlides) index = 0;
+            updateSlider();
+        }
+
+        // Cambio automático cada 5 segundos
+        setInterval(() => {
+            changeSlide(1);
+        }, 5000);
+    </script>
+
 </body>
 </html>
