@@ -3,12 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Birriería - Ciudad Guzmán</title>
+    <title>Birriería el Calladito</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
+
+        /* Botón de Facebook flotante */
+        .facebook-btn {
+            position: fixed;
+            bottom: 100px;
+            right: 25px;
+            background: #1877F2;
+            color: white;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .facebook-btn:hover { transform: scale(1.1); }
+
+        .menu-item {
+            background-color: transparent;
+            perspective: 1000px;
+            height: 300px;
+            cursor: pointer;
+        }
+
+        .menu-item-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border-radius: 20px;
+        }
+
+        .menu-item.is-flipped .menu-item-inner {
+            transform: rotateY(180deg);
+        }
+
+        .menu-item-front, .menu-item-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 20px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .menu-item-front {
+            background-color: white;
+        }
+
+        .menu-item-back {
+            background-color: var(--rojo-birria);
+            color: white;
+            transform: rotateY(180deg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center; 
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .menu-item-back h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.3rem;
+            color: white;
+        }
+
+        .menu-item-back p {
+            margin: 0 0 15px 0;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .price-tag {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .menu-item-back small {
+            font-style: italic;
+            opacity: 0.7;
+        }
+
         :root {
             --rojo-birria: #b22222;
             --blanco: #ffffff;
@@ -27,11 +125,38 @@
 
         /* --- 1. ENCABEZADO (LOGO) --- */
         header {
-            background-color: var(--rojo-birria);
-            padding: 1.5rem;
+            position: relative;
+            padding: 3rem 1.5rem;
             text-align: center;
+            overflow: hidden;
+            background-color: var(--oscuro);
         }
-        .logo-container img { max-width: 180px; height: auto; }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0; 
+            left: 0;
+            right: 0; 
+            bottom: 0;
+            background-image: url('./banner.jpg'); 
+            background-size: cover;
+            background-position: center;
+            filter: blur(8px) brightness(0.7);
+            transform: scale(1.1);
+            z-index: 1;
+        }
+
+        .logo-container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo-container img { 
+            max-width: 200px; 
+            height: auto; 
+            filter: drop-shadow(0 2px 10px rgba(0,0,0,0.5));
+        }
 
         /* --- 2. GALERÍA CON JAVASCRIPT --- */
         .slider-container {
@@ -44,7 +169,7 @@
 
         .slider {
             display: flex;
-            width: 300%; /* 100% por cada imagen (3 imágenes = 300%) */
+            width: 300%;
             height: 100%;
             transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -56,7 +181,6 @@
             background-position: center;
         }
 
-        /* Botones de navegación */
         .nav-btn {
             position: absolute;
             top: 50%;
@@ -77,7 +201,7 @@
         .prev-btn { left: 20px; }
         .next-btn { right: 20px; }
 
-        /* --- 3. MENÚ DE PRODUCTOS (8 PRODUCTOS) --- */
+        /* --- 3. MENÚ DE PRODUCTOS --- */
         .section {
             padding: 3rem 1.5rem;
             max-width: 1100px;
@@ -92,13 +216,6 @@
             margin-top: 2rem;
         }
 
-        .menu-item {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            transition: 0.3s;
-        }
         .menu-item:hover { transform: translateY(-8px); }
 
         .prod-img {
@@ -171,7 +288,7 @@
 
     <header>
         <div class="logo-container">
-            <img src="C:\Users\dokie\OneDrive\Desktop\logo.png" alt="Birriería Logo">
+            <img src="./logo.png" alt="Birriería Logo">
         </div>
     </header>
 
@@ -180,47 +297,136 @@
         <button class="nav-btn next-btn" onclick="changeSlide(1)">❯</button>
         
         <div class="slider" id="mainSlider">
-            <div class="slide" style="background-image: url('file:///C:/Users/dokie/OneDrive/Desktop/Comida-A.jpg');"></div>
-            <div class="slide" style="background-image: url('file:///C:/Users/dokie/OneDrive/Desktop/Comida-B.jpg');"></div>
-            <div class="slide" style="background-image: url('file:///C:/Users/dokie/OneDrive/Desktop/Comida-C.jpg');"></div>
+            <div class="slide" style="background-image: url('./Comida-A.jpg');"></div>
+            <div class="slide" style="background-image: url('./Comida-B.jpg');"></div>
+            <div class="slide" style="background-image: url('./Comida-C.jpg');"></div>
         </div>
     </div>
 
     <section class="section">
-        <h2>Lo que se ofrece</h2>
+        <h2>Menú de Productos</h2>
         <div class="menu-grid">
-            <div class="menu-item">
-                <div class="prod-img" style="background-image: url('file:///C:/Users/dokie/OneDrive/Desktop/Comida-A.jpg');"></div>
-                <div class="prod-info"><h3>Comida A</h3><p>A A A A</p></div>
+            
+            <div class="menu-item" onclick="this.classList.toggle('is-flipped')">
+                <div class="menu-item-inner">
+                    <div class="menu-item-front">
+                        <div class="prod-img" style="background-image: url('./Comida-A.jpg');"></div>
+                        <div class="prod-info"><h3>AAA</h3><p>Descripción A</p></div>
+                    </div>
+                    <div class="menu-item-back">
+                        <h3>AAA</h3>
+                        <p>A A A A A A A A A A</p>
+                        <div class="price-tag">$100 MXN</div>
+                        <small>Click para cerrar</small>
+                    </div>
+                </div>
             </div>
-            <div class="menu-item">
-                <div class="prod-img" style="background-image: url('file:///C:/Users/dokie/OneDrive/Desktop/Comida-B.jpg');"></div>
-                <div class="prod-info"><h3>Comida B</h3><p>B B B B</p></div>
+
+            <div class="menu-item" onclick="this.classList.toggle('is-flipped')">
+                <div class="menu-item-inner">
+                    <div class="menu-item-front">
+                        <div class="prod-img" style="background-image: url('./Comida-B.jpg');"></div>
+                        <div class="prod-info"><h3>BBB</h3><p>Descripción B</p></div>
+                    </div>
+                    <div class="menu-item-back">
+                        <h3>BBB</h3>
+                        <p>B B B B B B B B B B</p>
+                        <div class="price-tag">$200 MXN</div>
+                        <small>Click para cerrar</small>
+                    </div>
+                </div>
             </div>
-            <div class="menu-item">
-                <div class="prod-img" style="background-image: url('file:///C:/Users/dokie/OneDrive/Desktop/Comida-C.jpg');"></div>
-                <div class="prod-info"><h3>Comida C</h3><p>C C C C</p></div>
+
+            <div class="menu-item" onclick="this.classList.toggle('is-flipped')">
+                <div class="menu-item-inner">
+                    <div class="menu-item-front">
+                        <div class="prod-img" style="background-image: url('./Comida-C.jpg');"></div>
+                        <div class="prod-info"><h3>CCC</h3><p>Descripción C</p></div>
+                    </div>
+                    <div class="menu-item-back">
+                        <h3>CCC</h3>
+                        <p>C C C C C C C C C C</p>
+                        <div class="price-tag">$300 MXN</div>
+                        <small>Click para cerrar</small>
+                    </div>
+                </div>
             </div>
-            <div class="menu-item">
-                <div class="prod-img" style="background-image: url('file:///C:/Users/dokie/OneDrive/Desktop/Comida-D.jpg');"></div>
-                <div class="prod-info"><h3>Comida D</h3><p>D D D D</p></div>
+
+            <div class="menu-item" onclick="this.classList.toggle('is-flipped')">
+                <div class="menu-item-inner">
+                    <div class="menu-item-front">
+                        <div class="prod-img" style="background-image: url('./Comida-D.jpg');"></div>
+                        <div class="prod-info"><h3>DDD</h3><p>Descripción D</p></div>
+                    </div>
+                    <div class="menu-item-back">
+                        <h3>DDD</h3>
+                        <p>D D D D D D D D D D</p>
+                        <div class="price-tag">$400 MXN</div>
+                        <small>Click para cerrar</small>
+                    </div>
+                </div>
             </div>
-            <div class="menu-item">
-                <div class="prod-img" style="background-image: url('file:///C:/Users/dokie/OneDrive/Desktop/Comida-E.jpg');"></div>
-                <div class="prod-info"><h3>Comida E</h3><p>E E E E</p></div>
+
+            <div class="menu-item" onclick="this.classList.toggle('is-flipped')">
+                <div class="menu-item-inner">
+                    <div class="menu-item-front">
+                        <div class="prod-img" style="background-image: url('./Comida-E.jpg');"></div>
+                        <div class="prod-info"><h3>EEE</h3><p>Descripción E</p></div>
+                    </div>
+                    <div class="menu-item-back">
+                        <h3>EEE</h3>
+                        <p>E E E E E E E E E E</p>
+                        <div class="price-tag">$500 MXN</div>
+                        <small>Click para cerrar</small>
+                    </div>
+                </div>
             </div>
-            <div class="menu-item">
-                <div class="prod-img" style="background-image: url('file:///C:/Users/dokie/OneDrive/Desktop/Comida-F.jpg');"></div>
-                <div class="prod-info"><h3>Comida F</h3><p>F F F F</p></div>
+
+            <div class="menu-item" onclick="this.classList.toggle('is-flipped')">
+                <div class="menu-item-inner">
+                    <div class="menu-item-front">
+                        <div class="prod-img" style="background-image: url('./Comida-F.jpg');"></div>
+                        <div class="prod-info"><h3>FFF</h3><p>Descripción F</p></div>
+                    </div>
+                    <div class="menu-item-back">
+                        <h3>FFF</h3>
+                        <p>F F F F F F F F F F</p>
+                        <div class="price-tag">$600 MXN</div>
+                        <small>Click para cerrar</small>
+                    </div>
+                </div>
             </div>
-            <div class="menu-item">
-                <div class="prod-img" style="background-image: url('file:///C:/Users/dokie/OneDrive/Desktop/Comida-G.jpg');"></div>
-                <div class="prod-info"><h3>Comida G</h3><p>G G G G</p></div>
+
+            <div class="menu-item" onclick="this.classList.toggle('is-flipped')">
+                <div class="menu-item-inner">
+                    <div class="menu-item-front">
+                        <div class="prod-img" style="background-image: url('./Comida-G.jpg');"></div>
+                        <div class="prod-info"><h3>GGG</h3><p>Descripción G</p></div>
+                    </div>
+                    <div class="menu-item-back">
+                        <h3>GGG</h3>
+                        <p>G G G G G G G G G G</p>
+                        <div class="price-tag">$700 MXN</div>
+                        <small>Click para cerrar</small>
+                    </div>
+                </div>
             </div>
-            <div class="menu-item">
-                <div class="prod-img" style="background-image: url('file:///C:/Users/dokie/OneDrive/Desktop/Comida-H.jpg');"></div>
-                <div class="prod-info"><h3>Comida H</h3><p>H H H H</p></div>
+
+            <div class="menu-item" onclick="this.classList.toggle('is-flipped')">
+                <div class="menu-item-inner">
+                    <div class="menu-item-front">
+                        <div class="prod-img" style="background-image: url('./Comida-H.jpg');"></div>
+                        <div class="prod-info"><h3>HHH</h3><p>Descripción H</p></div>
+                    </div>
+                    <div class="menu-item-back">
+                        <h3>HHH</h3>
+                        <p>H H H H H H H H H H</p>
+                        <div class="price-tag">$800 MXN</div>
+                        <small>Click para cerrar</small>
+                    </div>
+                </div>
             </div>
+
         </div>
     </section>
 
@@ -250,17 +456,26 @@
     </section>
 
     <footer>
+        <div style="margin-bottom: 20px;">
+            <p>Síguenos en nuestras redes:</p>
+            <a href="https://www.facebook.com/pages/El%20Calladito%20Jr/533567170090293/#" target="_blank" style="color: white; font-size: 2rem; margin: 0 15px;"><i class="fab fa-facebook"></i></a>
+            <a href="https://wa.me/523411754639?text=Hola!%0AQuisiera%20información." target="_blank" style="color: white; font-size: 2rem; margin: 0 15px;"><i class="fab fa-whatsapp"></i></a>
+        </div>
         <p>© 2026 Birriería - Ciudad Guzmán, Jalisco</p>
-    </header>
+    </footer>
 
-    <a href="https://wa.me/523411754639" class="whatsapp-btn" target="_blank">
+    <a href="https://wa.me/523411754639?text=Hola!%0AVengo%20de%20la%20página%20y%20quisiera%20informacion" class="facebook-btn" target="_blank">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+
+    <a href="https://wa.me/523411754639?text=Hola!%0AVengo%20de%20la%20página%20y%20quisiera%20informacion" class="whatsapp-btn" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
     <script>
         let index = 0;
         const slider = document.getElementById('mainSlider');
-        const totalSlides = 3; // Cambia este número si agregas más fotos a la galería
+        const totalSlides = 3;
 
         function updateSlider() {
             slider.style.transform = `translateX(-${(index * 100) / totalSlides}%)`;
@@ -273,7 +488,6 @@
             updateSlider();
         }
 
-        // Cambio automático cada 5 segundos
         setInterval(() => {
             changeSlide(1);
         }, 5000);
