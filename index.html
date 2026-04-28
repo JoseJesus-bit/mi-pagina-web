@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Birriería El Calladito Jr. | Ciudad Guzmán, Jalisco</title>
 
     <!-- SEO -->
-    <meta name="description" content="Birriería El Calladito Jr. en Ciudad Guzmán, Jalisco. La mejor birria de la región, tacos, consomé y más. Paquetes para eventos desde 20 personas a $130 MXN por persona.">
-    <meta name="keywords" content="birriería, birria, Ciudad Guzmán, Jalisco, El Calladito, tacos de birria, consomé, eventos, paquetes birria">
+    <meta name="description"
+        content="Birriería El Calladito Jr. en Ciudad Guzmán, Jalisco. La mejor birria de la región, tacos, consomé y más. Paquetes para eventos desde 20 personas a $130 MXN por persona.">
+    <meta name="keywords"
+        content="birriería, birria, Ciudad Guzmán, Jalisco, El Calladito, tacos de birria, consomé, eventos, paquetes birria">
     <meta name="author" content="Birriería El Calladito Jr.">
     <meta name="robots" content="index, follow">
 
     <!-- Open Graph (vista previa en WhatsApp, Facebook, etc.) -->
     <meta property="og:title" content="Birriería El Calladito Jr. | Ciudad Guzmán">
-    <meta property="og:description" content="La mejor birria de Ciudad Guzmán. Tacos, consomé y paquetes para eventos desde 20 personas.">
+    <meta property="og:description"
+        content="La mejor birria de Ciudad Guzmán. Tacos, consomé y paquetes para eventos desde 20 personas.">
     <meta property="og:image" content="img/banner.jpg">
     <meta property="og:type" content="restaurant">
     <meta property="og:locale" content="es_MX">
-    
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <style>
 
+    <style>
         /* Botón de Facebook flotante */
         .facebook-btn {
             position: fixed;
@@ -38,11 +41,14 @@
             justify-content: center;
             font-size: 30px;
             z-index: 1000;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
             text-decoration: none;
             transition: 0.3s;
         }
-        .facebook-btn:hover { transform: scale(1.1); }
+
+        .facebook-btn:hover {
+            transform: scale(1.1);
+        }
 
         .menu-item {
             background-color: transparent;
@@ -58,7 +64,7 @@
             text-align: center;
             transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
             transform-style: preserve-3d;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
             border-radius: 20px;
         }
 
@@ -66,7 +72,8 @@
             transform: rotateY(180deg);
         }
 
-        .menu-item-front, .menu-item-back {
+        .menu-item-front,
+        .menu-item-back {
             position: absolute;
             width: 100%;
             height: 100%;
@@ -88,7 +95,7 @@
             transform: rotateY(180deg);
             display: flex;
             flex-direction: column;
-            justify-content: center; 
+            justify-content: center;
             align-items: center;
             padding: 20px;
             box-sizing: border-box;
@@ -138,37 +145,28 @@
 
         /* --- 1. ENCABEZADO (LOGO) --- */
         header {
-            position: relative;
-            padding: 3rem 1.5rem;
-            text-align: center;
-            overflow: hidden;
-            background-color: var(--oscuro);
-        }
-
-        header::before {
-            content: "";
-            position: absolute;
-            top: 0; 
-            left: 0;
-            right: 0; 
-            bottom: 0;
-            background-image: url('img/banner.jpg'); 
-            background-size: cover;
-            background-position: center;
-            filter: blur(8px) brightness(0.7);
-            transform: scale(1.1);
-            z-index: 1;
+            width: 100%;
+            padding: 10px 20px;
+            /* Ajusta el espacio interno */
+            background-color: #ffffff;
+            /* O el color de tu marca */
         }
 
         .logo-container {
-            position: relative;
-            z-index: 2;
+            display: flex;
+            justify-content: space-between;
+            /* Esto manda uno a la izquierda y otro a la derecha */
+            align-items: center;
+            /* Los centra verticalmente */
+            max-width: 1200px;
+            /* Opcional: para que no se peguen tanto a las orillas en pantallas grandes */
+            margin: 0 auto;
         }
 
-        .logo-container img { 
-            max-width: 200px; 
-            height: auto; 
-            filter: drop-shadow(0 2px 10px rgba(0,0,0,0.5));
+        .logo-img {
+            height: 80px;
+            /* Ajusta el tamaño de tus logos aquí */
+            width: auto;
         }
 
         /* --- 2. GALERÍA CON JAVASCRIPT --- */
@@ -185,7 +183,7 @@
             overflow: hidden;
             background: #000;
             border-radius: 20px;
-            box-shadow: 0 6px 25px rgba(0,0,0,0.2);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
         }
 
         .slider {
@@ -219,9 +217,18 @@
             z-index: 10;
             transition: 0.3s;
         }
-        .nav-btn:hover { background-color: var(--rojo-birria); }
-        .prev-btn { left: 20px; }
-        .next-btn { right: 20px; }
+
+        .nav-btn:hover {
+            background-color: var(--rojo-birria);
+        }
+
+        .prev-btn {
+            left: 20px;
+        }
+
+        .next-btn {
+            right: 20px;
+        }
 
         /* --- 3. MENÚ DE PRODUCTOS --- */
         .section {
@@ -230,7 +237,7 @@
             margin: auto;
             text-align: center;
         }
-        
+
         .menu-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -238,7 +245,9 @@
             margin-top: 2rem;
         }
 
-        .menu-item:hover { transform: translateY(-8px); }
+        .menu-item:hover {
+            transform: translateY(-8px);
+        }
 
         .prod-img {
             width: 100%;
@@ -247,16 +256,28 @@
             background-position: center;
         }
 
-        .prod-info { padding: 1.5rem; }
-        .prod-info h3 { margin: 0 0 8px; color: var(--rojo-birria); font-size: 1.2rem; }
-        .prod-info p { font-size: 0.9rem; color: #666; line-height: 1.4; }
+        .prod-info {
+            padding: 1.5rem;
+        }
+
+        .prod-info h3 {
+            margin: 0 0 8px;
+            color: var(--rojo-birria);
+            font-size: 1.2rem;
+        }
+
+        .prod-info p {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.4;
+        }
 
         /* --- 4. SECCIÓN DE EVENTOS --- */
         .eventos-card {
             background: white;
             padding: 2rem 1.5rem;
             border-radius: 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
         }
 
         .evento-precio-hero {
@@ -284,7 +305,7 @@
         .evento-precio-hero .minimo-nota {
             margin-top: 12px;
             font-size: 0.95rem;
-            background: rgba(255,255,255,0.15);
+            background: rgba(255, 255, 255, 0.15);
             display: inline-block;
             padding: 6px 16px;
             border-radius: 50px;
@@ -327,7 +348,14 @@
         }
 
         /* --- 5. UBICACIÓN --- */
-        .map-wrapper { position: relative; border-radius: 25px; overflow: hidden; height: 400px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .map-wrapper {
+            position: relative;
+            border-radius: 25px;
+            overflow: hidden;
+            height: 400px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
         .btn-encuentranos {
             position: absolute;
             top: 20px;
@@ -340,7 +368,7 @@
             border-radius: 50px;
             font-weight: bold;
             z-index: 5;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
 
         /* --- 6. WHATSAPP FLOTANTE --- */
@@ -358,7 +386,7 @@
             justify-content: center;
             font-size: 35px;
             z-index: 1000;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
             text-decoration: none;
         }
 
@@ -397,33 +425,94 @@
         }
 
         /* Retraso escalonado para tarjetas del menú */
-        .menu-item:nth-child(1)  { transition-delay: 0.05s; }
-        .menu-item:nth-child(2)  { transition-delay: 0.10s; }
-        .menu-item:nth-child(3)  { transition-delay: 0.15s; }
-        .menu-item:nth-child(4)  { transition-delay: 0.20s; }
-        .menu-item:nth-child(5)  { transition-delay: 0.25s; }
-        .menu-item:nth-child(6)  { transition-delay: 0.30s; }
-        .menu-item:nth-child(7)  { transition-delay: 0.35s; }
-        .menu-item:nth-child(8)  { transition-delay: 0.40s; }
-        .menu-item:nth-child(9)  { transition-delay: 0.05s; }
-        .menu-item:nth-child(10) { transition-delay: 0.10s; }
-        .menu-item:nth-child(11) { transition-delay: 0.15s; }
-        .menu-item:nth-child(12) { transition-delay: 0.20s; }
-        .menu-item:nth-child(13) { transition-delay: 0.25s; }
-        .menu-item:nth-child(14) { transition-delay: 0.30s; }
-        .menu-item:nth-child(15) { transition-delay: 0.35s; }
-        .menu-item:nth-child(16) { transition-delay: 0.40s; }
-        .menu-item:nth-child(17) { transition-delay: 0.45s; }
-        .menu-item:nth-child(18) { transition-delay: 0.50s; }
+        .menu-item:nth-child(1) {
+            transition-delay: 0.05s;
+        }
 
-        footer { background: var(--oscuro); color: white; padding: 2rem; text-align: center; margin-top: 2rem; }
+        .menu-item:nth-child(2) {
+            transition-delay: 0.10s;
+        }
+
+        .menu-item:nth-child(3) {
+            transition-delay: 0.15s;
+        }
+
+        .menu-item:nth-child(4) {
+            transition-delay: 0.20s;
+        }
+
+        .menu-item:nth-child(5) {
+            transition-delay: 0.25s;
+        }
+
+        .menu-item:nth-child(6) {
+            transition-delay: 0.30s;
+        }
+
+        .menu-item:nth-child(7) {
+            transition-delay: 0.35s;
+        }
+
+        .menu-item:nth-child(8) {
+            transition-delay: 0.40s;
+        }
+
+        .menu-item:nth-child(9) {
+            transition-delay: 0.05s;
+        }
+
+        .menu-item:nth-child(10) {
+            transition-delay: 0.10s;
+        }
+
+        .menu-item:nth-child(11) {
+            transition-delay: 0.15s;
+        }
+
+        .menu-item:nth-child(12) {
+            transition-delay: 0.20s;
+        }
+
+        .menu-item:nth-child(13) {
+            transition-delay: 0.25s;
+        }
+
+        .menu-item:nth-child(14) {
+            transition-delay: 0.30s;
+        }
+
+        .menu-item:nth-child(15) {
+            transition-delay: 0.35s;
+        }
+
+        .menu-item:nth-child(16) {
+            transition-delay: 0.40s;
+        }
+
+        .menu-item:nth-child(17) {
+            transition-delay: 0.45s;
+        }
+
+        .menu-item:nth-child(18) {
+            transition-delay: 0.50s;
+        }
+
+        footer {
+            background: var(--oscuro);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
     </style>
 </head>
+
 <body>
 
     <header>
         <div class="logo-container">
-            <img src="img/logo.png" alt="Birriería Logo">
+            <img src="img/logo.png" alt="Birriería Logo Izquierdo" class="logo-img">
+            <img src="img/logo-2.jpeg" alt="Birriería Logo Derecho" class="logo-img">
         </div>
     </header>
 
@@ -431,7 +520,7 @@
         <div class="slider-container">
             <button class="nav-btn prev-btn" onclick="changeSlide(-1)">❮</button>
             <button class="nav-btn next-btn" onclick="changeSlide(1)">❯</button>
-            
+
             <div class="slider" id="mainSlider">
                 <div class="slide" style="background-image: url('img/evento-1.jpeg');"></div>
                 <div class="slide" style="background-image: url('img/evento-2.jpeg');"></div>
@@ -454,13 +543,16 @@
     <section class="section">
         <h2 class="fade-in-up">Menú de Productos</h2>
         <div class="menu-grid">
-            
+
             <!-- 1 — Costilla -->
             <div class="menu-item" onclick="this.classList.toggle('is-flipped')">
                 <div class="menu-item-inner">
                     <div class="menu-item-front">
                         <div class="prod-img" style="background-image: url('img/costilla.jpeg');"></div>
-                        <div class="prod-info"><h3>Costilla</h3><p>Costilla de res al horno en su jugo</p></div>
+                        <div class="prod-info">
+                            <h3>Costilla</h3>
+                            <p>Costilla de res al horno en su jugo</p>
+                        </div>
                     </div>
                     <div class="menu-item-back">
                         <h3>Costilla</h3>
@@ -476,7 +568,10 @@
                 <div class="menu-item-inner">
                     <div class="menu-item-front">
                         <div class="prod-img" style="background-image: url('img/lengua.jpeg');"></div>
-                        <div class="prod-info"><h3>Lengua</h3><p>Lengua de res en caldillo de chile</p></div>
+                        <div class="prod-info">
+                            <h3>Lengua</h3>
+                            <p>Lengua de res en caldillo de chile</p>
+                        </div>
                     </div>
                     <div class="menu-item-back">
                         <h3>Lengua</h3>
@@ -492,7 +587,10 @@
                 <div class="menu-item-inner">
                     <div class="menu-item-front">
                         <div class="prod-img" style="background-image: url('img/pepena.jpeg');"></div>
-                        <div class="prod-info"><h3>Pepeña</h3><p>Panza de res en caldillo</p></div>
+                        <div class="prod-info">
+                            <h3>Pepeña</h3>
+                            <p>Panza de res en caldillo</p>
+                        </div>
                     </div>
                     <div class="menu-item-back">
                         <h3>Pepeña</h3>
@@ -508,7 +606,10 @@
                 <div class="menu-item-inner">
                     <div class="menu-item-front">
                         <div class="prod-img" style="background-image: url('img/sopa-elote.jpeg');"></div>
-                        <div class="prod-info"><h3>Sopa de Elote</h3><p>Elote con calabaza al vapor</p></div>
+                        <div class="prod-info">
+                            <h3>Sopa de Elote</h3>
+                            <p>Elote con calabaza al vapor</p>
+                        </div>
                     </div>
                     <div class="menu-item-back">
                         <h3>Sopa de Elote</h3>
@@ -524,7 +625,10 @@
                 <div class="menu-item-inner">
                     <div class="menu-item-front">
                         <div class="prod-img" style="background-image: url('img/tortas-camaron.jpeg');"></div>
-                        <div class="prod-info"><h3>Tortas de Camarón</h3><p>Tortas de camarón en salsa roja</p></div>
+                        <div class="prod-info">
+                            <h3>Tortas de Camarón</h3>
+                            <p>Tortas de camarón en salsa roja</p>
+                        </div>
                     </div>
                     <div class="menu-item-back">
                         <h3>Tortas de Camarón</h3>
@@ -540,7 +644,10 @@
                 <div class="menu-item-inner">
                     <div class="menu-item-front">
                         <div class="prod-img" style="background-image: url('img/capirotada.jpeg');"></div>
-                        <div class="prod-info"><h3>Capirotada</h3><p>Postre tradicional con pasas y nuez</p></div>
+                        <div class="prod-info">
+                            <h3>Capirotada</h3>
+                            <p>Postre tradicional con pasas y nuez</p>
+                        </div>
                     </div>
                     <div class="menu-item-back">
                         <h3>Capirotada</h3>
@@ -556,7 +663,10 @@
                 <div class="menu-item-inner">
                     <div class="menu-item-front">
                         <div class="prod-img" style="background-image: url('img/chile-relleno.jpeg');"></div>
-                        <div class="prod-info"><h3>Chile Relleno</h3><p>Chile poblano en salsa roja con guarnición</p></div>
+                        <div class="prod-info">
+                            <h3>Chile Relleno</h3>
+                            <p>Chile poblano en salsa roja con guarnición</p>
+                        </div>
                     </div>
                     <div class="menu-item-back">
                         <h3>Chile Relleno</h3>
@@ -572,7 +682,10 @@
                 <div class="menu-item-inner">
                     <div class="menu-item-front">
                         <div class="prod-img" style="background-image: url('img/codorniz.jpeg');"></div>
-                        <div class="prod-info"><h3>Codorniz</h3><p>Codorniz en salsa verde</p></div>
+                        <div class="prod-info">
+                            <h3>Codorniz</h3>
+                            <p>Codorniz en salsa verde</p>
+                        </div>
                     </div>
                     <div class="menu-item-back">
                         <h3>Codorniz</h3>
@@ -587,8 +700,12 @@
             <div class="menu-item" onclick="this.classList.toggle('is-flipped')">
                 <div class="menu-item-inner">
                     <div class="menu-item-front">
-                        <div class="prod-img" style="background-image: url('img/banner.jpeg'); filter: brightness(0.7);"></div>
-                        <div class="prod-info"><h3>Próximamente</h3><p>Más platillos en camino</p></div>
+                        <div class="prod-img"
+                            style="background-image: url('img/banner.jpeg'); filter: brightness(0.7);"></div>
+                        <div class="prod-info">
+                            <h3>Próximamente</h3>
+                            <p>Más platillos en camino</p>
+                        </div>
                     </div>
                     <div class="menu-item-back">
                         <h3>Próximamente</h3>
@@ -603,8 +720,12 @@
             <div class="menu-item" onclick="this.classList.toggle('is-flipped')">
                 <div class="menu-item-inner">
                     <div class="menu-item-front">
-                        <div class="prod-img" style="background-image: url('img/banner.jpeg'); filter: brightness(0.7);"></div>
-                        <div class="prod-info"><h3>Próximamente</h3><p>Más platillos en camino</p></div>
+                        <div class="prod-img"
+                            style="background-image: url('img/banner.jpeg'); filter: brightness(0.7);"></div>
+                        <div class="prod-info">
+                            <h3>Próximamente</h3>
+                            <p>Más platillos en camino</p>
+                        </div>
                     </div>
                     <div class="menu-item-back">
                         <h3>Próximamente</h3>
@@ -619,8 +740,12 @@
             <div class="menu-item" onclick="this.classList.toggle('is-flipped')">
                 <div class="menu-item-inner">
                     <div class="menu-item-front">
-                        <div class="prod-img" style="background-image: url('img/banner.jpeg'); filter: brightness(0.7);"></div>
-                        <div class="prod-info"><h3>Próximamente</h3><p>Más platillos en camino</p></div>
+                        <div class="prod-img"
+                            style="background-image: url('img/banner.jpeg'); filter: brightness(0.7);"></div>
+                        <div class="prod-info">
+                            <h3>Próximamente</h3>
+                            <p>Más platillos en camino</p>
+                        </div>
                     </div>
                     <div class="menu-item-back">
                         <h3>Próximamente</h3>
@@ -635,8 +760,12 @@
             <div class="menu-item" onclick="this.classList.toggle('is-flipped')">
                 <div class="menu-item-inner">
                     <div class="menu-item-front">
-                        <div class="prod-img" style="background-image: url('img/banner.jpeg'); filter: brightness(0.7);"></div>
-                        <div class="prod-info"><h3>Próximamente</h3><p>Más platillos en camino</p></div>
+                        <div class="prod-img"
+                            style="background-image: url('img/banner.jpeg'); filter: brightness(0.7);"></div>
+                        <div class="prod-info">
+                            <h3>Próximamente</h3>
+                            <p>Más platillos en camino</p>
+                        </div>
                     </div>
                     <div class="menu-item-back">
                         <h3>Próximamente</h3>
@@ -651,8 +780,12 @@
             <div class="menu-item" onclick="this.classList.toggle('is-flipped')">
                 <div class="menu-item-inner">
                     <div class="menu-item-front">
-                        <div class="prod-img" style="background-image: url('img/banner.jpeg'); filter: brightness(0.7);"></div>
-                        <div class="prod-info"><h3>Próximamente</h3><p>Más platillos en camino</p></div>
+                        <div class="prod-img"
+                            style="background-image: url('img/banner.jpeg'); filter: brightness(0.7);"></div>
+                        <div class="prod-info">
+                            <h3>Próximamente</h3>
+                            <p>Más platillos en camino</p>
+                        </div>
                     </div>
                     <div class="menu-item-back">
                         <h3>Próximamente</h3>
@@ -667,8 +800,12 @@
             <div class="menu-item" onclick="this.classList.toggle('is-flipped')">
                 <div class="menu-item-inner">
                     <div class="menu-item-front">
-                        <div class="prod-img" style="background-image: url('img/banner.jpg'); filter: brightness(0.7);"></div>
-                        <div class="prod-info"><h3>Próximamente</h3><p>Más platillos en camino</p></div>
+                        <div class="prod-img" style="background-image: url('img/banner.jpg'); filter: brightness(0.7);">
+                        </div>
+                        <div class="prod-info">
+                            <h3>Próximamente</h3>
+                            <p>Más platillos en camino</p>
+                        </div>
                     </div>
                     <div class="menu-item-back">
                         <h3>Próximamente</h3>
@@ -683,8 +820,12 @@
             <div class="menu-item" onclick="this.classList.toggle('is-flipped')">
                 <div class="menu-item-inner">
                     <div class="menu-item-front">
-                        <div class="prod-img" style="background-image: url('img/banner.jpg'); filter: brightness(0.7);"></div>
-                        <div class="prod-info"><h3>Próximamente</h3><p>Más platillos en camino</p></div>
+                        <div class="prod-img" style="background-image: url('img/banner.jpg'); filter: brightness(0.7);">
+                        </div>
+                        <div class="prod-info">
+                            <h3>Próximamente</h3>
+                            <p>Más platillos en camino</p>
+                        </div>
                     </div>
                     <div class="menu-item-back">
                         <h3>Próximamente</h3>
@@ -699,8 +840,12 @@
             <div class="menu-item" onclick="this.classList.toggle('is-flipped')">
                 <div class="menu-item-inner">
                     <div class="menu-item-front">
-                        <div class="prod-img" style="background-image: url('img/banner.jpg'); filter: brightness(0.7);"></div>
-                        <div class="prod-info"><h3>Próximamente</h3><p>Más platillos en camino</p></div>
+                        <div class="prod-img" style="background-image: url('img/banner.jpg'); filter: brightness(0.7);">
+                        </div>
+                        <div class="prod-info">
+                            <h3>Próximamente</h3>
+                            <p>Más platillos en camino</p>
+                        </div>
                     </div>
                     <div class="menu-item-back">
                         <h3>Próximamente</h3>
@@ -716,7 +861,10 @@
                 <div class="menu-item-inner">
                     <div class="menu-item-front">
                         <div class="prod-img" style="background-image: url('img/Refresco.jpg');"></div>
-                        <div class="prod-info"><h3>Refresco</h3><p>Bebida fría para acompañar tu birria</p></div>
+                        <div class="prod-info">
+                            <h3>Refresco</h3>
+                            <p>Bebida fría para acompañar tu birria</p>
+                        </div>
                     </div>
                     <div class="menu-item-back">
                         <h3>Refresco</h3>
@@ -732,7 +880,10 @@
                 <div class="menu-item-inner">
                     <div class="menu-item-front">
                         <div class="prod-img" style="background-image: url('img/Aguas.jpg');"></div>
-                        <div class="prod-info"><h3>Aguas Frescas</h3><p>Bebidas naturales del día</p></div>
+                        <div class="prod-info">
+                            <h3>Aguas Frescas</h3>
+                            <p>Bebidas naturales del día</p>
+                        </div>
                     </div>
                     <div class="menu-item-back">
                         <h3>Aguas Frescas</h3>
@@ -770,7 +921,9 @@
             </div>
 
             <p class="evento-cta">
-                ¿Tienes un evento? <a href="https://wa.me/523411754639?text=Hola!%20Quisiera%20informaci%C3%B3n%20sobre%20paquetes%20para%20eventos" target="_blank">Contáctanos por WhatsApp</a> para más información.
+                ¿Tienes un evento? <a
+                    href="https://wa.me/523411754639?text=Hola!%20Quisiera%20informaci%C3%B3n%20sobre%20paquetes%20para%20eventos"
+                    target="_blank">Contáctanos por WhatsApp</a> para más información.
             </p>
 
         </div>
@@ -781,15 +934,20 @@
             <a href="https://maps.app.goo.gl/6vNiheoybW7DPbBs5" target="_blank" class="btn-encuentranos">
                 <i class="fas fa-map-marker-alt"></i> Encuéntranos en Maps
             </a>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d332.02223083851334!2d-103.45638474739651!3d19.695470740255168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842f875565200db5%3A0xc00d30da115053f1!2sEL%20Calladito%20Jr.!5e0!3m2!1ses-419!2smx!4v1777319663151!5m2!1ses-419!2smx" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d332.02223083851334!2d-103.45638474739651!3d19.695470740255168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842f875565200db5%3A0xc00d30da115053f1!2sEL%20Calladito%20Jr.!5e0!3m2!1ses-419!2smx!4v1777319663151!5m2!1ses-419!2smx"
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </section>
 
     <footer>
         <div style="margin-bottom: 20px;">
             <p>Síguenos en nuestras redes:</p>
-            <a href="https://www.facebook.com/pages/El%20Calladito%20Jr/533567170090293/#" target="_blank" style="color: white; font-size: 2rem; margin: 0 15px;"><i class="fab fa-facebook"></i></a>
-            <a href="https://wa.me/523411754639?text=Hola!%0AVengo%20de%20la%20página%20y%20quisiera%20informacion" target="_blank" style="color: white; font-size: 2rem; margin: 0 15px;"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.facebook.com/pages/El%20Calladito%20Jr/533567170090293/#" target="_blank"
+                style="color: white; font-size: 2rem; margin: 0 15px;"><i class="fab fa-facebook"></i></a>
+            <a href="https://wa.me/523411754639?text=Hola!%0AVengo%20de%20la%20página%20y%20quisiera%20informacion"
+                target="_blank" style="color: white; font-size: 2rem; margin: 0 15px;"><i
+                    class="fab fa-whatsapp"></i></a>
         </div>
         <p>© 2026 Birriería - Ciudad Guzmán, Jalisco</p>
     </footer>
@@ -798,7 +956,8 @@
         <i class="fab fa-facebook-f"></i>
     </a>
 
-    <a href="https://wa.me/523411754639?text=Hola!%0AVengo%20de%20la%20página%20y%20quisiera%20informacion" class="whatsapp-btn" target="_blank">
+    <a href="https://wa.me/523411754639?text=Hola!%0AVengo%20de%20la%20página%20y%20quisiera%20informacion"
+        class="whatsapp-btn" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -853,4 +1012,5 @@
     </script>
 
 </body>
+
 </html>
