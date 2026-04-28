@@ -190,7 +190,7 @@
 
         .slider {
             display: flex;
-            width: 300%;
+            width: 600%;
             height: 100%;
             transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -433,15 +433,21 @@
             <button class="nav-btn next-btn" onclick="changeSlide(1)">❯</button>
             
             <div class="slider" id="mainSlider">
-                <div class="slide" style="background-image: url('img/Comida-A.jpg');"></div>
-                <div class="slide" style="background-image: url('img/Comida-B.jpg');"></div>
-                <div class="slide" style="background-image: url('img/Comida-C.jpg');"></div>
+                <div class="slide" style="background-image: url('img/evento-1.jpg');"></div>
+                <div class="slide" style="background-image: url('img/evento-2.jpg');"></div>
+                <div class="slide" style="background-image: url('img/evento-3.jpg');"></div>
+                <div class="slide" style="background-image: url('img/evento-4.jpg');"></div>
+                <div class="slide" style="background-image: url('img/evento-5.jpg');"></div>
+                <div class="slide" style="background-image: url('img/evento-6.jpg');"></div>
             </div>
         </div>
         <div class="slider-dots" id="sliderDots">
             <div class="dot active" onclick="goToSlide(0)"></div>
             <div class="dot" onclick="goToSlide(1)"></div>
             <div class="dot" onclick="goToSlide(2)"></div>
+            <div class="dot" onclick="goToSlide(3)"></div>
+            <div class="dot" onclick="goToSlide(4)"></div>
+            <div class="dot" onclick="goToSlide(5)"></div>
         </div>
     </div>
 
@@ -449,257 +455,257 @@
         <h2 class="fade-in-up">Menú de Productos</h2>
         <div class="menu-grid">
             
-            <!-- 1 -->
+            <!-- 1 — Costilla -->
             <div class="menu-item" onclick="this.classList.toggle('is-flipped')">
                 <div class="menu-item-inner">
                     <div class="menu-item-front">
-                        <div class="prod-img" style="background-image: url('img/Comida-A.jpg');"></div>
-                        <div class="prod-info"><h3>Platillo 1</h3><p>Descripción del platillo</p></div>
+                        <div class="prod-img" style="background-image: url('img/costilla.jpg');"></div>
+                        <div class="prod-info"><h3>Costilla</h3><p>Costilla de res al horno en su jugo</p></div>
                     </div>
                     <div class="menu-item-back">
-                        <h3>Platillo 1</h3>
-                        <p>Descripción detallada del platillo</p>
-                        <div class="price-tag">$100 MXN</div>
+                        <h3>Costilla</h3>
+                        <p>Jugosa costilla de res horneada a fuego lento con nuestro adobo especial</p>
+                        <div class="price-tag">$__ MXN</div>
                         <small>Click para cerrar</small>
                     </div>
                 </div>
             </div>
 
-            <!-- 2 -->
+            <!-- 2 — Lengua -->
             <div class="menu-item" onclick="this.classList.toggle('is-flipped')">
                 <div class="menu-item-inner">
                     <div class="menu-item-front">
-                        <div class="prod-img" style="background-image: url('img/Comida-B.jpg');"></div>
-                        <div class="prod-info"><h3>Platillo 2</h3><p>Descripción del platillo</p></div>
+                        <div class="prod-img" style="background-image: url('img/lengua.jpg');"></div>
+                        <div class="prod-info"><h3>Lengua</h3><p>Lengua de res en caldillo de chile</p></div>
                     </div>
                     <div class="menu-item-back">
-                        <h3>Platillo 2</h3>
-                        <p>Descripción detallada del platillo</p>
-                        <div class="price-tag">$100 MXN</div>
+                        <h3>Lengua</h3>
+                        <p>Tierna lengua de res en sabroso caldillo con chiles y especias</p>
+                        <div class="price-tag">$__ MXN</div>
                         <small>Click para cerrar</small>
                     </div>
                 </div>
             </div>
 
-            <!-- 3 -->
+            <!-- 3 — Pepeña -->
             <div class="menu-item" onclick="this.classList.toggle('is-flipped')">
                 <div class="menu-item-inner">
                     <div class="menu-item-front">
-                        <div class="prod-img" style="background-image: url('img/Comida-C.jpg');"></div>
-                        <div class="prod-info"><h3>Platillo 3</h3><p>Descripción del platillo</p></div>
+                        <div class="prod-img" style="background-image: url('img/pepena.jpg');"></div>
+                        <div class="prod-info"><h3>Pepeña</h3><p>Panza de res en caldillo</p></div>
                     </div>
                     <div class="menu-item-back">
-                        <h3>Platillo 3</h3>
-                        <p>Descripción detallada del platillo</p>
-                        <div class="price-tag">$100 MXN</div>
+                        <h3>Pepeña</h3>
+                        <p>Panza de res cocida en caldillo de especias, tradicional y sabrosa</p>
+                        <div class="price-tag">$__ MXN</div>
                         <small>Click para cerrar</small>
                     </div>
                 </div>
             </div>
 
-            <!-- 4 -->
+            <!-- 4 — Sopa de Elote -->
             <div class="menu-item" onclick="this.classList.toggle('is-flipped')">
                 <div class="menu-item-inner">
                     <div class="menu-item-front">
-                        <div class="prod-img" style="background-image: url('img/Comida-D.jpg');"></div>
-                        <div class="prod-info"><h3>Platillo 4</h3><p>Descripción del platillo</p></div>
+                        <div class="prod-img" style="background-image: url('img/sopa-elote.jpg');"></div>
+                        <div class="prod-info"><h3>Sopa de Elote</h3><p>Elote con calabaza al vapor</p></div>
                     </div>
                     <div class="menu-item-back">
-                        <h3>Platillo 4</h3>
-                        <p>Descripción detallada del platillo</p>
-                        <div class="price-tag">$100 MXN</div>
+                        <h3>Sopa de Elote</h3>
+                        <p>Elote tierno con calabacita, perfecta guarnición o plato ligero</p>
+                        <div class="price-tag">$__ MXN</div>
                         <small>Click para cerrar</small>
                     </div>
                 </div>
             </div>
 
-            <!-- 5 -->
+            <!-- 5 — Tortas de Camarón -->
             <div class="menu-item" onclick="this.classList.toggle('is-flipped')">
                 <div class="menu-item-inner">
                     <div class="menu-item-front">
-                        <div class="prod-img" style="background-image: url('img/Comida-E.jpg');"></div>
-                        <div class="prod-info"><h3>Platillo 5</h3><p>Descripción del platillo</p></div>
+                        <div class="prod-img" style="background-image: url('img/tortas-camaron.jpg');"></div>
+                        <div class="prod-info"><h3>Tortas de Camarón</h3><p>Tortas de camarón en salsa roja</p></div>
                     </div>
                     <div class="menu-item-back">
-                        <h3>Platillo 5</h3>
-                        <p>Descripción detallada del platillo</p>
-                        <div class="price-tag">$100 MXN</div>
+                        <h3>Tortas de Camarón</h3>
+                        <p>Clásicas tortas de camarón bañadas en salsa roja con elote y ejotes</p>
+                        <div class="price-tag">$__ MXN</div>
                         <small>Click para cerrar</small>
                     </div>
                 </div>
             </div>
 
-            <!-- 6 -->
+            <!-- 6 — Capirotada -->
             <div class="menu-item" onclick="this.classList.toggle('is-flipped')">
                 <div class="menu-item-inner">
                     <div class="menu-item-front">
-                        <div class="prod-img" style="background-image: url('img/Comida-F.jpg');"></div>
-                        <div class="prod-info"><h3>Platillo 6</h3><p>Descripción del platillo</p></div>
+                        <div class="prod-img" style="background-image: url('img/capirotada.jpg');"></div>
+                        <div class="prod-info"><h3>Capirotada</h3><p>Postre tradicional con pasas y nuez</p></div>
                     </div>
                     <div class="menu-item-back">
-                        <h3>Platillo 6</h3>
-                        <p>Descripción detallada del platillo</p>
-                        <div class="price-tag">$100 MXN</div>
+                        <h3>Capirotada</h3>
+                        <p>Postre de cuaresma hecho con pan, piloncillo, pasas, nuez y almendras</p>
+                        <div class="price-tag">$__ MXN</div>
                         <small>Click para cerrar</small>
                     </div>
                 </div>
             </div>
 
-            <!-- 7 -->
+            <!-- 7 — Chile Relleno -->
             <div class="menu-item" onclick="this.classList.toggle('is-flipped')">
                 <div class="menu-item-inner">
                     <div class="menu-item-front">
-                        <div class="prod-img" style="background-image: url('img/Comida-G.jpg');"></div>
-                        <div class="prod-info"><h3>Platillo 7</h3><p>Descripción del platillo</p></div>
+                        <div class="prod-img" style="background-image: url('img/chile-relleno.jpg');"></div>
+                        <div class="prod-info"><h3>Chile Relleno</h3><p>Chile poblano en salsa roja con guarnición</p></div>
                     </div>
                     <div class="menu-item-back">
-                        <h3>Platillo 7</h3>
-                        <p>Descripción detallada del platillo</p>
-                        <div class="price-tag">$100 MXN</div>
+                        <h3>Chile Relleno</h3>
+                        <p>Chile poblano relleno bañado en salsa roja, acompañado de elote y ejotes</p>
+                        <div class="price-tag">$__ MXN</div>
                         <small>Click para cerrar</small>
                     </div>
                 </div>
             </div>
 
-            <!-- 8 -->
+            <!-- 8 — Codorniz -->
             <div class="menu-item" onclick="this.classList.toggle('is-flipped')">
                 <div class="menu-item-inner">
                     <div class="menu-item-front">
-                        <div class="prod-img" style="background-image: url('img/Comida-H.jpg');"></div>
-                        <div class="prod-info"><h3>Platillo 8</h3><p>Descripción del platillo</p></div>
+                        <div class="prod-img" style="background-image: url('img/codorniz.jpg');"></div>
+                        <div class="prod-info"><h3>Codorniz</h3><p>Codorniz en salsa verde</p></div>
                     </div>
                     <div class="menu-item-back">
-                        <h3>Platillo 8</h3>
-                        <p>Descripción detallada del platillo</p>
-                        <div class="price-tag">$100 MXN</div>
+                        <h3>Codorniz</h3>
+                        <p>Codorniz tierna cocida en salsa verde con hierbas de campo</p>
+                        <div class="price-tag">$__ MXN</div>
                         <small>Click para cerrar</small>
                     </div>
                 </div>
             </div>
 
-            <!-- 9 -->
+            <!-- 9 — Platillo pendiente -->
             <div class="menu-item" onclick="this.classList.toggle('is-flipped')">
                 <div class="menu-item-inner">
                     <div class="menu-item-front">
-                        <div class="prod-img" style="background-image: url('img/Comida-I.jpg');"></div>
-                        <div class="prod-info"><h3>Platillo 9</h3><p>Descripción del platillo</p></div>
+                        <div class="prod-img" style="background-image: url('img/banner.jpg'); filter: brightness(0.7);"></div>
+                        <div class="prod-info"><h3>Próximamente</h3><p>Más platillos en camino</p></div>
                     </div>
                     <div class="menu-item-back">
-                        <h3>Platillo 9</h3>
-                        <p>Descripción detallada del platillo</p>
-                        <div class="price-tag">$100 MXN</div>
+                        <h3>Próximamente</h3>
+                        <p>Estamos actualizando nuestro menú con más delicias</p>
+                        <div class="price-tag">🍖</div>
                         <small>Click para cerrar</small>
                     </div>
                 </div>
             </div>
 
-            <!-- 10 -->
+            <!-- 10 — Platillo pendiente -->
             <div class="menu-item" onclick="this.classList.toggle('is-flipped')">
                 <div class="menu-item-inner">
                     <div class="menu-item-front">
-                        <div class="prod-img" style="background-image: url('img/Comida-J.jpg');"></div>
-                        <div class="prod-info"><h3>Platillo 10</h3><p>Descripción del platillo</p></div>
+                        <div class="prod-img" style="background-image: url('img/banner.jpg'); filter: brightness(0.7);"></div>
+                        <div class="prod-info"><h3>Próximamente</h3><p>Más platillos en camino</p></div>
                     </div>
                     <div class="menu-item-back">
-                        <h3>Platillo 10</h3>
-                        <p>Descripción detallada del platillo</p>
-                        <div class="price-tag">$100 MXN</div>
+                        <h3>Próximamente</h3>
+                        <p>Estamos actualizando nuestro menú con más delicias</p>
+                        <div class="price-tag">🍖</div>
                         <small>Click para cerrar</small>
                     </div>
                 </div>
             </div>
 
-            <!-- 11 -->
+            <!-- 11 — Platillo pendiente -->
             <div class="menu-item" onclick="this.classList.toggle('is-flipped')">
                 <div class="menu-item-inner">
                     <div class="menu-item-front">
-                        <div class="prod-img" style="background-image: url('img/Comida-K.jpg');"></div>
-                        <div class="prod-info"><h3>Platillo 11</h3><p>Descripción del platillo</p></div>
+                        <div class="prod-img" style="background-image: url('img/banner.jpg'); filter: brightness(0.7);"></div>
+                        <div class="prod-info"><h3>Próximamente</h3><p>Más platillos en camino</p></div>
                     </div>
                     <div class="menu-item-back">
-                        <h3>Platillo 11</h3>
-                        <p>Descripción detallada del platillo</p>
-                        <div class="price-tag">$100 MXN</div>
+                        <h3>Próximamente</h3>
+                        <p>Estamos actualizando nuestro menú con más delicias</p>
+                        <div class="price-tag">🍖</div>
                         <small>Click para cerrar</small>
                     </div>
                 </div>
             </div>
 
-            <!-- 12 -->
+            <!-- 12 — Platillo pendiente -->
             <div class="menu-item" onclick="this.classList.toggle('is-flipped')">
                 <div class="menu-item-inner">
                     <div class="menu-item-front">
-                        <div class="prod-img" style="background-image: url('img/Comida-L.jpg');"></div>
-                        <div class="prod-info"><h3>Platillo 12</h3><p>Descripción del platillo</p></div>
+                        <div class="prod-img" style="background-image: url('img/banner.jpg'); filter: brightness(0.7);"></div>
+                        <div class="prod-info"><h3>Próximamente</h3><p>Más platillos en camino</p></div>
                     </div>
                     <div class="menu-item-back">
-                        <h3>Platillo 12</h3>
-                        <p>Descripción detallada del platillo</p>
-                        <div class="price-tag">$100 MXN</div>
+                        <h3>Próximamente</h3>
+                        <p>Estamos actualizando nuestro menú con más delicias</p>
+                        <div class="price-tag">🍖</div>
                         <small>Click para cerrar</small>
                     </div>
                 </div>
             </div>
 
-            <!-- 13 -->
+            <!-- 13 — Platillo pendiente -->
             <div class="menu-item" onclick="this.classList.toggle('is-flipped')">
                 <div class="menu-item-inner">
                     <div class="menu-item-front">
-                        <div class="prod-img" style="background-image: url('img/Comida-M.jpg');"></div>
-                        <div class="prod-info"><h3>Platillo 13</h3><p>Descripción del platillo</p></div>
+                        <div class="prod-img" style="background-image: url('img/banner.jpg'); filter: brightness(0.7);"></div>
+                        <div class="prod-info"><h3>Próximamente</h3><p>Más platillos en camino</p></div>
                     </div>
                     <div class="menu-item-back">
-                        <h3>Platillo 13</h3>
-                        <p>Descripción detallada del platillo</p>
-                        <div class="price-tag">$100 MXN</div>
+                        <h3>Próximamente</h3>
+                        <p>Estamos actualizando nuestro menú con más delicias</p>
+                        <div class="price-tag">🍖</div>
                         <small>Click para cerrar</small>
                     </div>
                 </div>
             </div>
 
-            <!-- 14 -->
+            <!-- 14 — Platillo pendiente -->
             <div class="menu-item" onclick="this.classList.toggle('is-flipped')">
                 <div class="menu-item-inner">
                     <div class="menu-item-front">
-                        <div class="prod-img" style="background-image: url('img/Comida-N.jpg');"></div>
-                        <div class="prod-info"><h3>Platillo 14</h3><p>Descripción del platillo</p></div>
+                        <div class="prod-img" style="background-image: url('img/banner.jpg'); filter: brightness(0.7);"></div>
+                        <div class="prod-info"><h3>Próximamente</h3><p>Más platillos en camino</p></div>
                     </div>
                     <div class="menu-item-back">
-                        <h3>Platillo 14</h3>
-                        <p>Descripción detallada del platillo</p>
-                        <div class="price-tag">$100 MXN</div>
+                        <h3>Próximamente</h3>
+                        <p>Estamos actualizando nuestro menú con más delicias</p>
+                        <div class="price-tag">🍖</div>
                         <small>Click para cerrar</small>
                     </div>
                 </div>
             </div>
 
-            <!-- 15 -->
+            <!-- 15 — Platillo pendiente -->
             <div class="menu-item" onclick="this.classList.toggle('is-flipped')">
                 <div class="menu-item-inner">
                     <div class="menu-item-front">
-                        <div class="prod-img" style="background-image: url('img/Comida-O.jpg');"></div>
-                        <div class="prod-info"><h3>Platillo 15</h3><p>Descripción del platillo</p></div>
+                        <div class="prod-img" style="background-image: url('img/banner.jpg'); filter: brightness(0.7);"></div>
+                        <div class="prod-info"><h3>Próximamente</h3><p>Más platillos en camino</p></div>
                     </div>
                     <div class="menu-item-back">
-                        <h3>Platillo 15</h3>
-                        <p>Descripción detallada del platillo</p>
-                        <div class="price-tag">$100 MXN</div>
+                        <h3>Próximamente</h3>
+                        <p>Estamos actualizando nuestro menú con más delicias</p>
+                        <div class="price-tag">🍖</div>
                         <small>Click para cerrar</small>
                     </div>
                 </div>
             </div>
 
-            <!-- 16 -->
+            <!-- 16 — Platillo pendiente -->
             <div class="menu-item" onclick="this.classList.toggle('is-flipped')">
                 <div class="menu-item-inner">
                     <div class="menu-item-front">
-                        <div class="prod-img" style="background-image: url('img/Comida-P.jpg');"></div>
-                        <div class="prod-info"><h3>Platillo 16</h3><p>Descripción del platillo</p></div>
+                        <div class="prod-img" style="background-image: url('img/banner.jpg'); filter: brightness(0.7);"></div>
+                        <div class="prod-info"><h3>Próximamente</h3><p>Más platillos en camino</p></div>
                     </div>
                     <div class="menu-item-back">
-                        <h3>Platillo 16</h3>
-                        <p>Descripción detallada del platillo</p>
-                        <div class="price-tag">$100 MXN</div>
+                        <h3>Próximamente</h3>
+                        <p>Estamos actualizando nuestro menú con más delicias</p>
+                        <div class="price-tag">🍖</div>
                         <small>Click para cerrar</small>
                     </div>
                 </div>
@@ -715,7 +721,7 @@
                     <div class="menu-item-back">
                         <h3>Refresco</h3>
                         <p>Refresco frío de tu elección para acompañar tus platillos</p>
-                        <div class="price-tag">$30 MXN</div>
+                        <div class="price-tag">$__ MXN</div>
                         <small>Click para cerrar</small>
                     </div>
                 </div>
@@ -731,7 +737,7 @@
                     <div class="menu-item-back">
                         <h3>Aguas Frescas</h3>
                         <p>Aguas frescas naturales preparadas en casa, variedades del día</p>
-                        <div class="price-tag">$25 MXN</div>
+                        <div class="price-tag">$__ MXN</div>
                         <small>Click para cerrar</small>
                     </div>
                 </div>
@@ -800,7 +806,7 @@
         // ── CARRUSEL ──────────────────────────────────────────
         let index = 0;
         const slider = document.getElementById('mainSlider');
-        const totalSlides = 3;
+        const totalSlides = 6;
         const dots = document.querySelectorAll('.dot');
 
         function updateSlider() {
