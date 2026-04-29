@@ -446,9 +446,14 @@
     <header>
         <div class="logo-container">
             <img src="img/logo.png" alt="Birriería El Calladito - Logo">
-            <img src="img/logo-2.jpg" alt="Birriería El Calladito - Desde 2008" style="border-radius: 50%; max-width: 160px;">
+            <img src="img/logo-2.jpeg" alt="Birriería El Calladito - Desde 2008" style="border-radius: 50%; max-width: 160px;">
         </div>
     </header>
+
+    
+    <div id="anuncio-diario" style="background: #ffd700; color: #333; padding: 10px; text-align: center; font-weight: bold; border-bottom: 2px solid #e6c200;">
+        <i class="fas fa-star"></i> <span id="texto-anuncio">Cargando promoción del día...</span>
+    </div>
 
     <div class="slider-wrapper">
         <div class="slider-container">
@@ -476,40 +481,42 @@
 
     <section class="section">
         <h2 class="fade-in-up">Menú de Productos</h2>
-        <p class="fade-in-up" style="color:#888; font-size:0.9rem; margin-top:-0.5rem; margin-bottom:0;">
-            <i class="fas fa-hand-pointer"></i> Toca cualquier tarjeta para ver el precio y detalle
-        </p>
+        <p> Toca para ver información al reverso</p>
         <div class="menu-grid">
 
-    <!-- 1 — Orden Grande -->
+    <!-- 1 — Costilla -->
     <div class="menu-item" onclick="this.classList.toggle('is-flipped')">
         <div class="menu-item-inner">
             <div class="menu-item-front">
-                <div class="prod-img" style="background-image: url('img/costilla.jpg');"></div>
-                <div class="prod-info"><h3>Orden Grande</h3><p>Porción generosa de birria con guarnición</p></div>
+                <div class="prod-img" style="background-image: url('img/costilla.jpeg');"></div>
+                <div class="prod-info"><h3>Costilla</h3><p>Costilla</p></div>
             </div>
             <div class="menu-item-back">
                 <h3>Orden Grande</h3>
-                <p>Porción generosa de nuestra birria con guarnición</p>
                 <div class="price-tag">$140 MXN</div>
-                <div class="price-llevar">🛍 Para llevar: $145 MXN</div>
+                <div class="price-llevar">Para llevar: $145 MXN</div>
+                <h3>Orden chica</h3>
+                <div class="price-tag">$120 MXN</div>
+                <div class="price-llevar">Para llevar: $125 MXN</div>
                 <small>Toca para cerrar</small>
             </div>
         </div>
     </div>
 
-    <!-- 2 — Orden Chica -->
+    <!-- 2 — Pepena -->
     <div class="menu-item" onclick="this.classList.toggle('is-flipped')">
         <div class="menu-item-inner">
             <div class="menu-item-front">
-                <div class="prod-img" style="background-image: url('img/evento-3.jpg');"></div>
-                <div class="prod-info"><h3>Orden Chica</h3><p>Porción individual de birria con guarnición</p></div>
+                <div class="prod-img" style="background-image: url('img/pepena.jpeg');"></div>
+                <div class="prod-info"><h3>Pepena</h3><p>Pepena</p></div>
             </div>
             <div class="menu-item-back">
-                <h3>Orden Chica</h3>
-                <p>Porción individual de nuestra birria con guarnición</p>
+               <h3>Orden Grande</h3>
+                <div class="price-tag">$140 MXN</div>
+                <div class="price-llevar">Para llevar: $145 MXN</div>
+                <h3>Orden chica</h3>
                 <div class="price-tag">$120 MXN</div>
-                <div class="price-llevar">🛍 Para llevar: $125 MXN</div>
+                <div class="price-llevar">Para llevar: $125 MXN</div>
                 <small>Toca para cerrar</small>
             </div>
         </div>
@@ -519,13 +526,13 @@
     <div class="menu-item" onclick="this.classList.toggle('is-flipped')">
         <div class="menu-item-inner">
             <div class="menu-item-front">
-                <div class="prod-img" style="background-image: url('img/lengua.jpg'); background-size: cover;"></div>
+                <div class="prod-img" style="background-image: url('img/lengua.jpeg'); background-size: cover;"></div>
                 <div class="prod-info"><h3>Orden de Lengua</h3><p>Lengua de res en caldillo de chile</p></div>
             </div>
             <div class="menu-item-back">
-                <h3>Orden de Lengua</h3>
-                <p>Tierna lengua de res en sabroso caldillo con chiles y especias</p>
+                <h3>Lengua</h3>
                 <div class="price-tag">$180 MXN</div>
+                <div class="price-llevar">Para llevar: $185 MXN</div>
                 <small>Toca para cerrar</small>
             </div>
         </div>
@@ -535,12 +542,12 @@
     <div class="menu-item" onclick="this.classList.toggle('is-flipped')">
         <div class="menu-item-inner">
             <div class="menu-item-front">
-                <div class="prod-img" style="background-image: url('img/lengua.jpg'); background-size: cover;"></div>
+                <div class="prod-img" style="background-image: url('img/taco-lengua.jpg'); background-size: cover;"></div>
                 <div class="prod-info"><h3>Taco de Lengua</h3><p>Taco con lengua de res</p></div>
             </div>
             <div class="menu-item-back">
                 <h3>Taco de Lengua</h3>
-                <p>Taco de lengua de res con cilantro, cebolla y salsa al gusto</p>
+                <p>Taco de lengua de res con cilantro, cebolla y salsa </p>
                 <div class="price-tag">$45 MXN</div>
                 <small>Toca para cerrar</small>
             </div>
@@ -551,12 +558,12 @@
     <div class="menu-item" onclick="this.classList.toggle('is-flipped')">
         <div class="menu-item-inner">
             <div class="menu-item-front">
-                <div class="prod-img" style="background-image: url('img/evento-6.jpg');"></div>
-                <div class="prod-info"><h3>Taco</h3><p>Taco de birria con consomé</p></div>
+                <div class="prod-img" style="background-image: url('img/taco.jpeg');"></div>
+                <div class="prod-info"><h3>Taco</h3><p>Taco</p></div>
             </div>
             <div class="menu-item-back">
                 <h3>Taco</h3>
-                <p>Taco de birria con cilantro, cebolla y consomé para acompañar</p>
+                <p>Taco de birria </p>
                 <div class="price-tag">$35 MXN</div>
                 <div class="price-llevar">🛍 Para llevar: $40 MXN</div>
                 <small>Toca para cerrar</small>
@@ -564,16 +571,16 @@
         </div>
     </div>
 
-    <!-- 6 — Pepeña -->
+    <!-- 6 — capirotada -->
     <div class="menu-item" onclick="this.classList.toggle('is-flipped')">
         <div class="menu-item-inner">
             <div class="menu-item-front">
-                <div class="prod-img" style="background-image: url('img/pepena.jpg');"></div>
-                <div class="prod-info"><h3>Pepeña</h3><p>Panza de res en caldillo</p></div>
+                <div class="prod-img" style="background-image: url('img/capirotada.jpeg');"></div>
+                <div class="prod-info"><h3>capirotada</h3><p>capirotada</p></div>
             </div>
             <div class="menu-item-back">
-                <h3>Pepeña</h3>
-                <p>Panza de res cocida en caldillo de especias, tradicional y sabrosa</p>
+                <h3>capirotada</h3>
+                <p>capirotada</p>
                 <div class="price-tag">$__ MXN</div>
                 <div class="price-llevar">🛍 Para llevar: +$5 MXN</div>
                 <small>Toca para cerrar</small>
@@ -585,8 +592,8 @@
     <div class="menu-item" onclick="this.classList.toggle('is-flipped')">
         <div class="menu-item-inner">
             <div class="menu-item-front">
-                <div class="prod-img" style="background-image: url('img/sopa-elote.jpg');"></div>
-                <div class="prod-info"><h3>Sopa de Elote</h3><p>Elote con calabaza al vapor</p></div>
+                <div class="prod-img" style="background-image: url('img/sopa-elote.jpeg');"></div>
+                <div class="prod-info"><h3>Sopa de Elote</h3><p>Elote </p></div>
             </div>
             <div class="menu-item-back">
                 <h3>Sopa de Elote</h3>
@@ -602,7 +609,7 @@
     <div class="menu-item" onclick="this.classList.toggle('is-flipped')">
         <div class="menu-item-inner">
             <div class="menu-item-front">
-                <div class="prod-img" style="background-image: url('img/tortas-camaron.jpg');"></div>
+                <div class="prod-img" style="background-image: url('img/tortas-camaron.jpeg');"></div>
                 <div class="prod-info"><h3>Tortas de Camarón</h3><p>Tortas de camarón en salsa roja</p></div>
             </div>
             <div class="menu-item-back">
@@ -615,28 +622,12 @@
         </div>
     </div>
 
-    <!-- 9 — Capirotada -->
-    <div class="menu-item" onclick="this.classList.toggle('is-flipped')">
-        <div class="menu-item-inner">
-            <div class="menu-item-front">
-                <div class="prod-img" style="background-image: url('img/capirotada.jpg');"></div>
-                <div class="prod-info"><h3>Capirotada</h3><p>Postre tradicional con pasas y nuez</p></div>
-            </div>
-            <div class="menu-item-back">
-                <h3>Capirotada</h3>
-                <p>Postre hecho con pan, piloncillo, pasas, nuez y almendras</p>
-                <div class="price-tag">$__ MXN</div>
-                <div class="price-llevar">🛍 Para llevar: +$5 MXN</div>
-                <small>Toca para cerrar</small>
-            </div>
-        </div>
-    </div>
-
+   
     <!-- 10 — Chile Relleno -->
     <div class="menu-item" onclick="this.classList.toggle('is-flipped')">
         <div class="menu-item-inner">
             <div class="menu-item-front">
-                <div class="prod-img" style="background-image: url('img/chile-relleno.jpg');"></div>
+                <div class="prod-img" style="background-image: url('img/chile-relleno.jpeg');"></div>
                 <div class="prod-info"><h3>Chile Relleno</h3><p>Chile poblano en salsa roja con guarnición</p></div>
             </div>
             <div class="menu-item-back">
@@ -653,7 +644,7 @@
     <div class="menu-item" onclick="this.classList.toggle('is-flipped')">
         <div class="menu-item-inner">
             <div class="menu-item-front">
-                <div class="prod-img" style="background-image: url('img/codorniz.jpg');"></div>
+                <div class="prod-img" style="background-image: url('img/codorniz.jpeg');"></div>
                 <div class="prod-info"><h3>Codorniz</h3><p>Codorniz en salsa verde</p></div>
             </div>
             <div class="menu-item-back">
@@ -691,7 +682,7 @@
             </div>
             <div class="menu-item-back">
                 <h3>Aguas Frescas</h3>
-                <p>Aguas frescas naturales preparadas en casa, variedades del día</p>
+                <p>Aguas frescas naturales </p>
                 <div class="price-tag">$25 MXN</div>
                 <small>Toca para cerrar</small>
             </div>
@@ -720,7 +711,7 @@
 
             <div class="evento-incluye">
                 <div class="incluye-chip"><i class="fas fa-bread-slice"></i> Tortillas</div>
-                <div class="incluye-chip"><i class="fas fa-pepper-hot"></i> Salsas</div>
+                <div class="incluye-chip"><i class="fas fa-pepper-hot"></i> Salsa</div>
                 <div class="incluye-chip"><i class="fas fa-leaf"></i> Cebolla</div>
             </div>
 
@@ -805,6 +796,26 @@
         }, { threshold: 0.12 });
 
         animTargets.forEach(el => observer.observe(el));
+
+        // Anuncios diarios
+        // Función para actualizar el anuncio según el día
+        function mostrarAnuncioDiario() {
+            const anuncios = {
+                0: "¡Domingo de ' ' ", // Domingo
+                1: "¡Lunes ' ' ",           // Lunes
+                2: "¡Martes ' ' ",                 // Martes
+                3: "¡Miércoles ' ' ",             // Miércoles
+                4: "¡Jueves ' ' ",  // Jueves
+                5: "¡Viernes ' ' ",        // Viernes
+                6: "¡Sábado ' ' "                 // Sábado
+            };
+
+            const hoy = new Date().getDay(); // Obtiene el número del día (0-6)
+            document.getElementById('texto-anuncio').innerText = anuncios[hoy];
+        }
+
+// Llamamos a la función al cargar la página
+mostrarAnuncioDiario();
     </script>
 
 </body>
