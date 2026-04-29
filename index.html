@@ -439,6 +439,45 @@
         .menu-item:nth-child(18) { transition-delay: 0.50s; }
 
         footer { background: var(--oscuro); color: white; padding: 2rem; text-align: center; margin-top: 2rem; }
+        
+        /* Estilos para el Anuncio Diario Grande y Animado */
+        .anuncio-diario-container {
+            width: 100%;
+            background: #ffd700; /* Color dorado de fondo */
+            overflow: hidden; /* Oculta el texto que se sale */
+            padding: 20px 0; /* Aumentamos el tamaño vertical (más grande) */
+            border-bottom: 3px solid #e6c200;
+            box-sizing: border-box;
+            position: relative;
+            z-index: 100; /* Asegura que esté por encima de todo */
+        }
+
+        .anuncio-diario-content {
+            display: inline-block;
+            white-space: nowrap; /* Evita que el texto salte de línea */
+            font-size: 1.8rem; /* Tamaño de letra grande */
+            font-weight: bold;
+            color: #333;
+            animation: marquee 8s linear infinite; /* Animación de 20 segundos infinita */
+            padding-left: 100%; /* El texto empieza fuera por la derecha */
+        }
+
+        /* Definición de la animación de movimiento */
+        @keyframes marquee {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-100%, 0); } /* Se mueve completamente a la izquierda */
+        }
+
+        /* Pequeño ajuste para celulares */
+        @media (max-width: 600px) {
+            .anuncio-diario-content { font-size: 1.3rem; animation-duration: 10s; } /* Letra un poco más chica y más rápido en celular */
+        }
+        
+        /* Hover para detenerlo y que el cliente pueda leer fácil si quiere */
+        .anuncio-diario-container:hover .anuncio-diario-content {
+            animation-play-state: paused;
+        }
+
     </style>
 </head>
 <body>
@@ -451,8 +490,11 @@
     </header>
 
     
-    <div id="anuncio-diario" style="background: #ffd700; color: #333; padding: 10px; text-align: center; font-weight: bold; border-bottom: 2px solid #e6c200;">
-        <i class="fas fa-star"></i> <span id="texto-anuncio">Cargando promoción del día...</span>
+    <div class="anuncio-diario-container">
+        <div class="anuncio-diario-content">
+            <i class="fas fa-star" style="color: #b22222;"></i> 
+            <span id="texto-anuncio">Cargando promoción del día...</span>
+        </div>
     </div>
 
     <div class="slider-wrapper">
